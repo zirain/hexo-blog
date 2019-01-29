@@ -1,11 +1,6 @@
 ---
-layout: post
-title:  "Install Jenkins on Docker"
-date:   2018-12-04 17:07:03 +0800
-categories: blogs
-tags: docker jenkins redis rabbitmq
+title:  Install Jenkins on Docker
 ---
-
 # Docker
 
 ## List containers

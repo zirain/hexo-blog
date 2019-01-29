@@ -1,11 +1,6 @@
 ---
-layout: post
-title:  "Kubernetes(1)"
-date:   2019-01-27 15:58:03 +0800
-categories: blogs
-tags: docker hyperv k8s
+title: Kubernetes(1)
 ---
-
 # Install Kubernetes on Windows 10
 
 ## Install Minikube
