@@ -1,5 +1,6 @@
 ---
 title: Kubernetes(1)
+date: 2019-01-27
 ---
 # Install Kubernetes on Windows 10
 

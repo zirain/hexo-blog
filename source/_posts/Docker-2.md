@@ -1,5 +1,6 @@
 ---
 title:  Docker(2)
+date: 2019-01-26
 ---
 # Docker
 
@@ -19,11 +20,19 @@ Use your internal IP address or connect to the special DNS name host.docker.inte
 
 ### 查看容器IP
 
-`docker inspect --format '{{ .NetworkSettings.IPAddress }}' <container_id>`
+`
+{% raw %}
+docker inspect --format '{{ .NetworkSettings.IPAddress }}' <container_id>
+{% endraw %}
+`
 
 ### 查看所有容器的IP
 
-`docker inspect --format='{{.Name}} {{.State.Running}} {{range.NetworkSettings.Networks}} {{.IPAddress}}{{end}}' $(docker ps -aq)`
+`
+{% raw %}
+docker inspect --format='{{.Name}} {{.State.Running}} {{range.NetworkSettings.Networks}} {{.IPAddress}}{{end}}' $(docker ps -aq)
+{% endraw %}
+`
 
 ## 删除容器
 
