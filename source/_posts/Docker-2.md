@@ -1,6 +1,8 @@
 ---
 title:  Docker(2)
 date: 2019-01-26
+tags: 
+    - docker
 ---
 # Docker
 

@@ -1,6 +1,9 @@
 ---
 title: Kubernetes(1)
 date: 2019-01-27
+tags: 
+    - docker
+    - k8s
 ---
 # Install Kubernetes on Windows 10
 

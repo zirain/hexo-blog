@@ -1,6 +1,9 @@
 ---
 title:  Install kafka on Win10 with WSL
 data: 2018-10-28
+tags: 
+    - kafka
+    - wsl
 ---
 # Kafka
 
