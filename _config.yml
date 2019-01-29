@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
+title: zirain's blog
+subtitle: things change, roll with it!
 description:
 keywords:
-author: John Doe
-language:
-timezone:
+author: Zirain
+language: zh-CN
+timezone: 
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
