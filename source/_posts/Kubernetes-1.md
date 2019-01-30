@@ -63,3 +63,7 @@ tags:
 `docker tag docker.io/mirrorgooglecontainers/pause:3.1  k8s.gcr.io/pause:3.1`
 
 `docker tag docker.io/coredns/coredns:1.2.6  k8s.gcr.io/coredns:1.2.6`
+
+### 安装失败
+
+安装失败，无法连接 https://k8s.gcr.io 考虑使用ali的k8s来搭建
