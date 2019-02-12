@@ -2,6 +2,6 @@
 
 blog repo
 
-source code of https://zirain.github.io
+source code of [dirty code blogs](https://zirain.github.io)
 
 blog engine: hexo
