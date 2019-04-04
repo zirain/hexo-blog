@@ -1,5 +1,5 @@
 ---
-title: k8s-on-mac
+title: Install minikube on Mac Pro
 date: 2019-04-04 14:53:35
 tags: 
     - docker
