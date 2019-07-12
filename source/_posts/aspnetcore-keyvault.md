@@ -69,9 +69,9 @@ https://github.com/zirain/AspNetCore-Playground/tree/master/src/Azure/Azure.KeyV
         }
 
         public IConfiguration Configuration { get; }
-````
+```
 
-### 注意事项
+## 注意事项
 
 假设配置对象为 `Logging.LogLevel.Default`
 
