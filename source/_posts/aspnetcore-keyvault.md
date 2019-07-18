@@ -40,7 +40,7 @@ https://github.com/zirain/AspNetCore-Playground/tree/master/src/Azure/Azure.KeyV
 ```
 {
   "KeyVault": {
-    "ClientId": "03a96e2e-52e9-4cea-9378-8bba9ae5b5c9",
+    "ClientId": "<Your ClientId>",
     "ClientSecret": "<Your ClientSecret>",
     "DnsName": "<Your KeyVault DNS Name>"
   },
