@@ -36,39 +36,70 @@ https://github.com/zirain/AspNetCore-Playground/tree/master/src/Azure/Azure.KeyV
 
 ## AspNetCore Starup
 
+### appsettings.json 配置
 ```
-        private readonly string AAD_CLIENT_ID = "<your-client-id>";
-        private readonly string AAD_CLIENT_SECRET = "<your-client-secret>";
-        private readonly string KEYVAULT_DNS_NAME = "you-keyvault-dns-name";
+{
+  "KeyVault": {
+    "ClientId": "03a96e2e-52e9-4cea-9378-8bba9ae5b5c9",
+    "ClientSecret": "<Your ClientSecret>",
+    "DnsName": "<Your KeyVault DNS Name>"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*",
+}
+```
+### Program.cs
+```
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        CreateHostBuilder(args).Build().Run();
+    }
 
-        public Startup(IWebHostEnvironment environment)
-        {
+    public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .ConfigureAppConfiguration((hostingContext, config) =>
+            {
+                var configRoot = new ConfigurationBuilder()
+                    .SetBasePath(hostingContext.HostingEnvironment.ContentRootPath)
+                    .AddJsonFile("appsettings.json", false, true)
+                    .AddJsonFile($"appsettings.{hostingContext.HostingEnvironment.EnvironmentName}.json", optional: true)
+                    .Build();
 
-            var kvClient = new KeyVaultClient(
-                 async (string authority, string resource, string scope) =>
-                 {
-                     var authContext = new AuthenticationContext(authority);
-                     var clientCred = new ClientCredential(AAD_CLIENT_ID, AAD_CLIENT_SECRET);
-                     var result = await authContext.AcquireTokenAsync(resource, clientCred);
-                     if (result == null)
-                     {
-                         throw new InvalidOperationException("Failed to retrieve access token for Key Vault");
-                     }
+                config.AddAzureKeyVault(configRoot.GetValue<string>("KeyVault:DnsName"), configRoot.GetValue<string>("KeyVault:ClientId"), configRoot.GetValue<string>("KeyVault:ClientSecret"), new DefaultKeyVaultSecretManager());
+            })
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup<Startup>();
+            });
+}
+```
 
-                     return result.AccessToken;
-                 }
-             );
-             
-            Configuration = new ConfigurationBuilder()
-                .SetBasePath(environment.ContentRootPath)
-                .AddJsonFile("appsettings.json", false, true)
-                .AddJsonFile($"appsettings.{environment.EnvironmentName}.json", optional: true)
-                .AddAzureKeyVault(KEYVAULT_DNS_NAME, kvClient, new DefaultKeyVaultSecretManager())
-                .AddEnvironmentVariables()
-                .Build();
-        }
+### 重载配置
 
-        public IConfiguration Configuration { get; }
+```
+public HomeController(
+    IConfiguration configuration,
+    IOptionsSnapshot<CustomOptions> options,
+    ILogger<HomeController> logger)
+{
+    _configuration = configuration as IConfigurationRoot;
+    _options = options;
+    _logger = logger;
+}
+
+public IActionResult Reload()
+{
+    _configuration.Reload();
+
+    return RedirectToAction("Index");
+}
 ```
 
 ## 注意事项
