@@ -16,7 +16,7 @@ tags:
 
 `choco install minikube kubernetes-cli`
 
-国内无法连接 [k8s.gcr.io](https://k8s.gcr.io) , 可以使用aliyun提供的minikube来替代，下载 [minikube-windows-amd64.exe](http://kubernetes.oss-cn-hangzhou.aliyuncs.com/minikube/releases/v1.4.2/minikube-windows-amd64.exe) 文件，重命名为 `minikube.exe`，并设置环境变量
+国内无法连接 [k8s.gcr.io](https://k8s.gcr.io) , 可以使用aliyun提供的minikube来替代，下载 [minikube-windows-amd64.exe](http://kubernetes.oss-cn-hangzhou.aliyuncs.com/minikube/releases/v1.4.0/minikube-windows-amd64.exe) 文件，重命名为 `minikube.exe`，并设置环境变量
 
 `minikube start --registry-mirror=https://registry.docker-cn.com --kubernetes-version v1.13.2`
 
