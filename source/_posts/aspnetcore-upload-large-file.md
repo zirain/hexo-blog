@@ -61,3 +61,5 @@ use-iis: true
 	</location>
 </configuration>
 ````
+
+[Github demo](https://github.com/zirain/AspNetCore-Playground/tree/master/src/WebConfigTransform/WebConfigTransform)

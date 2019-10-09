@@ -10,7 +10,7 @@ tags:
 
 使用阿里云修改的版本，避免国内无法连接 [k8s.gcr.io](https://k8s.gcr.io) 导致失败
 
-`curl -Lo minikube http://kubernetes.oss-cn-hangzhou.aliyuncs.com/minikube/releases/v1.0.0/minikube-darwin-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/`
+`curl -Lo minikube http://kubernetes.oss-cn-hangzhou.aliyuncs.com/minikube/releases/v1.4.0/minikube-darwin-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/`
 
 # Install VM providers 
 
