@@ -16,15 +16,15 @@ tags:
 
 `choco install minikube kubernetes-cli`
 
-国内无法连接 [k8s.gcr.io](https://k8s.gcr.io) , 可以使用aliyun提供的minikube来替代，下载 [minikube-windows-amd64.exe](http://kubernetes.oss-cn-hangzhou.aliyuncs.com/minikube/releases/v1.4.0/minikube-windows-amd64.exe) 文件，重命名为 `minikube.exe`，并设置环境变量
+国内无法连接 [k8s.gcr.io](https://k8s.gcr.io) , 可以使用aliyun提供的minikube来替代，下载 [minikube-windows-amd64.exe](https://kubernetes.oss-cn-hangzhou.aliyuncs.com/minikube/releases/v1.12.1/minikube-windows-amd64.exe?spm=a2c6h.12873639.0.0.ab202043XcPh8G&file=minikube-windows-amd64.exe) 文件，重命名为 `minikube.exe`，并设置环境变量
 
-`minikube start --registry-mirror=https://registry.docker-cn.com --kubernetes-version v1.13.2`
+[参考资料](https://developer.aliyun.com/article/221687)
 
 ### 设置hyper-v switch
 
 ### 启动minikube
 
-`minikube start --registry-mirror=https://registry.docker-cn.com --vm-driver="hyperv" --hyperv-virtual-switch="minikubeSwitch"`
+` minikube start --registry-mirror=https://hub-mirror.c.163.com --vm-driver="hyperv" --hyperv-virtual-switch="minikubeSwitch" --image-mirror-country cn --iso-url=https://kubernetes.oss-cn-hangzhou.aliyuncs.com/minikube/iso/minikube-v1.5.0.iso --memory=4096`
 
 ### 错误处理
 
