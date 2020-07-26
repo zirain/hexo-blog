@@ -5,3 +5,10 @@ blog repo
 source code of [dirty code blogs](https://zirain.github.io)
 
 blog engine: hexo
+
+
+## 部署
+
+```
+update minikube on win10
+```
