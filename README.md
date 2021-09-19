@@ -10,5 +10,7 @@ blog engine: hexo
 ## 部署
 
 ```
-update minikube on win10
+hexo version
+hexo server
+hexo d -g
 ```
