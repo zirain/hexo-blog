@@ -24,7 +24,9 @@ tags:
 
 ### 启动minikube
 
-` minikube start --registry-mirror=https://hub-mirror.c.163.com --vm-driver="hyperv" --hyperv-virtual-switch="minikubeSwitch" --image-mirror-country cn --iso-url=https://kubernetes.oss-cn-hangzhou.aliyuncs.com/minikube/iso/minikube-v1.5.0.iso --memory=4096`
+```
+minikube start --registry-mirror=https://hub-mirror.c.163.com --vm-driver="hyperv" --hyperv-virtual-switch="minikubeSwitch" --image-mirror-country cn --iso-url=https://kubernetes.oss-cn-hangzhou.aliyuncs.com/minikube/iso/minikube-v1.12.0.iso --memory=4096
+```
 
 ### 错误处理
 
